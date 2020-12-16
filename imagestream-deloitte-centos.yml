@@ -1,0 +1,127 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  annotations:
+    openshift.io/display-name: Deloitte-Centos7
+    openshift.io/image.dockerRepositoryCheck: '2020-12-15T21:44:21Z'
+  selfLink: >-
+    /apis/image.openshift.io/v1/namespaces/deloitte/imagestreams/deloitte-centos7
+  resourceVersion: '91374'
+  name: deloitte-centos7
+  uid: 07f8fb5f-c7a3-4e75-86be-7c136d724f2a
+  creationTimestamp: '2020-12-15T21:44:19Z'
+  generation: 2
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: image.openshift.io/v1
+      time: '2020-12-15T21:44:19Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:openshift.io/display-name': {}
+        'f:spec':
+          'f:tags':
+            .: {}
+            'k:{"name":"1.8"}':
+              .: {}
+              'f:annotations':
+                .: {}
+                'f:description': {}
+                'f:iconClass': {}
+                'f:openshift.io/display-name': {}
+                'f:openshift.io/provider-display-name': {}
+                'f:sampleRepo': {}
+                'f:supports': {}
+                'f:tags': {}
+              'f:from':
+                .: {}
+                'f:kind': {}
+                'f:name': {}
+              'f:generation': {}
+              'f:importPolicy': {}
+              'f:name': {}
+              'f:referencePolicy':
+                .: {}
+                'f:type': {}
+            'k:{"name":"latest"}':
+              .: {}
+              'f:annotations':
+                .: {}
+                'f:description': {}
+                'f:iconClass': {}
+                'f:openshift.io/display-name': {}
+                'f:openshift.io/provider-display-name': {}
+                'f:sampleRepo': {}
+                'f:supports': {}
+                'f:tags': {}
+              'f:from':
+                .: {}
+                'f:kind': {}
+                'f:name': {}
+              'f:generation': {}
+              'f:importPolicy': {}
+              'f:name': {}
+              'f:referencePolicy':
+                .: {}
+                'f:type': {}
+  namespace: deloitte
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+    - name: '1.8'
+      annotations:
+        description: Build and run java apps on wildfly
+        iconClass: icon-go-gopher
+        openshift.io/display-name: java 8
+        openshift.io/provider-display-name: ''
+        sampleRepo: ''
+        supports: java
+        tags: 'builder,java'
+      from:
+        kind: DockerImage
+        name: docker.io/stewdeloitte/centos7-wildfly
+      generation: 2
+      importPolicy: {}
+      referencePolicy:
+        type: Local
+    - name: latest
+      annotations:
+        description: Build and run Java apps on centos6 and wildfly
+        iconClass: icon-go-gopher
+        openshift.io/display-name: deloitte-centos7
+        openshift.io/provider-display-name: ''
+        sampleRepo: ''
+        supports: java
+        tags: 'builder,java'
+      from:
+        kind: ImageStreamTag
+        name: '1.8'
+      generation: 1
+      importPolicy: {}
+      referencePolicy:
+        type: Local
+status:
+  dockerImageRepository: 'image-registry.openshift-image-registry.svc:5000/deloitte/deloitte-centos7'
+  publicDockerImageRepository: >-
+    default-route-openshift-image-registry.apps-crc.testing/deloitte/deloitte-centos7
+  tags:
+    - tag: '1.8'
+      items:
+        - created: '2020-12-15T21:44:21Z'
+          dockerImageReference: >-
+            docker.io/stewdeloitte/centos7-wildfly@sha256:6e8470fa448824884ba89a6687840dc27fb5e24cf4d094108f5d979b94575f98
+          image: >-
+            sha256:6e8470fa448824884ba89a6687840dc27fb5e24cf4d094108f5d979b94575f98
+          generation: 2
+    - tag: latest
+      items:
+        - created: '2020-12-15T21:44:21Z'
+          dockerImageReference: >-
+            docker.io/stewdeloitte/centos7-wildfly@sha256:6e8470fa448824884ba89a6687840dc27fb5e24cf4d094108f5d979b94575f98
+          image: >-
+            sha256:6e8470fa448824884ba89a6687840dc27fb5e24cf4d094108f5d979b94575f98
+          generation: 2
